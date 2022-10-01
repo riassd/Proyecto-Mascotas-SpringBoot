@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DogFood</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/LOGO.png" rel="icon">
+  <link href="assets/img/LOGO.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  
+
+
+  
+  <!-- =======================================================
+  * Template Name: eBusiness - v4.8.0
+  * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html"><span>D</span>ogFood Administración</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+  </header><!-- End Header -->
+  <br>
+  <br>
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <div id="about" class="about-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>BIENVENIDO ADMINISTRADOR</h2>
+            </div>
+          </div>
+        </div>
+        
+  <main id="main">
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="section-headline text-center">
+          <ul>
+            <a th:href="@{/}">Inicio</a>
+            <li>Administración</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="inner-page">
+      <div class="container">
+        <a th:href="@{/registrar}">Crear Usuario</a>
+        
+        <br>
+        <br>
+        
+        <h2>Listado de Clientes de la base de datos</h2>
+          <div class="container mt-3">
+         <div th:if="${clientes != null and !clientes.empty}">
+                <table class="table table-striped" style="background-color: white;">
+                    <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>                    
+                    <th>Email</th>                    
+                    <th>Usuario</th>
+                    <th>Password</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                    
+                    
+                    
+                    </tr>
+                    
+                    <tr th:each="cliente: ${clientes}">
+                        <td th:text="${cliente.idcliente}"></td>
+                        <td th:text="${cliente.nombre}"></td>
+                        <td th:text="${cliente.email}"></td>                        
+                        <td th:text="${cliente.usuario}"></td>
+                        <td th:text="${cliente.password}"></td>
+                        <td >
+                            <a class="btn-dark btn-sm">Editar</a>
+                        </td>
+                        <td>
+                            <a class="btn-danger btn-sm" >Eliminar</a>
+                        </td>
+                    </tr>
+                    
+                </table>  
+                        </div>
+                
+                 <div th:if="${cliente == null or clientes.empty}">
+            La lista de usuarios está vacía
+        </div>
+        </div>
+       
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+  
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-
+
+
+</body>
+
+</html>
